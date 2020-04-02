@@ -1,0 +1,14 @@
+{
+  "name": "dashboard-backend",
+  "version": "1.0.0",
+  "description": "Backend system for my personal dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robin Van Roy",
+  "license": "ISC",
+  "dependencies": {
+
+  }
+}
