@@ -4,11 +4,17 @@
   "description": "Backend system for my personal dashboard",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "author": "Robin Van Roy",
   "license": "ISC",
   "dependencies": {
-
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
   }
 }
