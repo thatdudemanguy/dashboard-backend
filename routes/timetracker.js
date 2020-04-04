@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
 // Getting specific log
 router.get('/:id', getActivityById, (req, res) => {
-  res.json(res.activity);
+  res.json(res.activity);   
 });
 
 // Creating a new log
@@ -38,8 +38,26 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Updating a log
-router.patch('/:id', (req, res) => {
+// patching a log
+router.patch('/:id', getActivityById, async (req, res) => {
+  try {
+    if (res.activity._id) {
+      delete res.activity._id;
+    }
+
+    Object.entries(req.body).forEach((item) => {
+      res.activity[item[0]] = item[1];
+    });
+
+    res.activity.save();
+    res.status(200).json(res.activity);
+  } catch (e) {
+    res.status(500).json({ message: e.message });
+  }
+});
+
+// Putting a log
+router.put('/:id', getActivityById, (req, res) => {
   try {
 
   } catch (e) {
@@ -51,7 +69,7 @@ router.patch('/:id', (req, res) => {
 router.delete('/:id', getActivityById, async (req, res) => {
   try {
     await res.activity.remove();
-    res.json({ message: `Activity with id ${req.params.id} successfully deleted.`})
+    res.json({ message: `Activity with id ${req.params.id} successfully deleted.` })
   } catch (e) {
     res.status(500).json({ message: e.message });
   }
