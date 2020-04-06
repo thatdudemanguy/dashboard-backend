@@ -16,5 +16,4 @@ app.use(express.json()); //middleware that lets server accept json inside a requ
 const timetrackerRoutes = require('./routes/timetracker')
 
 app.use('/timetracker', timetrackerRoutes);
-
 app.listen(3000, () => console.log('Server started'))

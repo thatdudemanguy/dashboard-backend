@@ -41,10 +41,6 @@ router.post('/', async (req, res) => {
 // patching a log
 router.patch('/:id', getActivityById, async (req, res) => {
   try {
-    if (res.activity._id) {
-      delete res.activity._id;
-    }
-
     Object.entries(req.body).forEach((item) => {
       res.activity[item[0]] = item[1];
     });
