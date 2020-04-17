@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Activity = require('../models/activity');
 
+// TODO: REFACTOR TO NEW PRETTY CODE
+
 // Getting all time logged today
 router.get('/', async (req, res) => {
   try {
