@@ -1,19 +1,17 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
+const Server = require('./src/server');
+require('dotenv').config();
+
+const app = new Server().app;
 
 mongoose.connect('mongodb://localhost/timetracker', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
 db.on('error', e => console.log(e));
 db.on('open', () => console.log('Connected to the database'));
 
-app.use(express.json()); //middleware that lets server accept json inside a request.
-
-const timetrackerRoutes = require('./routes/timetracker')
-
-app.use('/timetracker', timetrackerRoutes);
-app.listen(3000, () => console.log('Server started'))
+app.listen(process.env.PORT, () => console.log(`Server started on port ${process.env.PORT}`))

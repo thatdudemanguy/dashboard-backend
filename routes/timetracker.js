@@ -14,7 +14,11 @@ router.get('/', async (req, res) => {
 
 // Getting specific log
 router.get('/:id', getActivityById, (req, res) => {
-  res.json(res.activity);   
+  try { 
+    res.status(200).json(res.activity);   
+  } catch (e) {
+    res.status(400).json({ message: e.message });
+  }
 });
 
 // Creating a new log
