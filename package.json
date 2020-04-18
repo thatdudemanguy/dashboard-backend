@@ -2,10 +2,11 @@
   "name": "dashboard-backend",
   "version": "1.0.0",
   "description": "Backend system for my personal dashboard",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
+  "repository": "https://github.com/thatdudemanguy/dashboard-backend",
   "author": "Robin Van Roy",
   "license": "ISC",
   "dependencies": {
