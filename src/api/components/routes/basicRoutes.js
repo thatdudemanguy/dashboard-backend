@@ -10,7 +10,7 @@ class BasicRoutes {
   }
 
   initRouters(o) {
-    if (o.s !== 'text') {
+    if (o !== 'text') {
       this.router.get('/', determineEndpoint, basicController.read);
     } else {
       this.router.get('/', determineEndpoint, basicController.readText);
