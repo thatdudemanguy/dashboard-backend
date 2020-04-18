@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = new Server().app;
 
-mongoose.connect('mongodb://localhost/timetracker', {
+mongoose.connect(process.env.DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
