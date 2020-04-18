@@ -4,14 +4,18 @@ const basicController = require('../controllers/basicController');
 const determineEndpoint = require('../../middleware/determineEndpoint.js');
 
 class BasicRoutes {
-  constructor() {
+  constructor({ type = '' } = {}) {
     this.router = express.Router();
-    this.initRouters();
+    this.initRouters(type);
   }
 
-  initRouters() {  
-    this.router.get('/', determineEndpoint, basicController.read);
- }
+  initRouters(o) {
+    if (o.s !== 'text') {
+      this.router.get('/', determineEndpoint, basicController.read);
+    } else {
+      this.router.get('/', determineEndpoint, basicController.readText);
+    }
+  }
 }
 
 module.exports = BasicRoutes;

@@ -5,5 +5,5 @@ module.exports = Object.freeze({
   'joke': 'https://geek-jokes.sameerkumar.website/api',
   'fact': 'http://numbersapi.com/random/math',
   'weather': `http://api.openweathermap.org/data/2.5/weather?q=Leuven,be&appid=${process.env.OPEN_WEATHER_KEY}`,
-  'news': `https://newsapi.org/v2/everything?&apikey=${process.env.NEWS_KEY}`,
+  'news': `https://newsapi.org/v2/everything?apikey=${process.env.NEWS_KEY}`,
 });
