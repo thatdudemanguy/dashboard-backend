@@ -19,7 +19,8 @@ module.exports = {
   pushTimetrack: async (req, res) => {
     const activity = new Activity({
       title: req.body.title,
-      description: req.body.description || null,
+      description: req.body.description,
+      longDescription: req.body.longDescription || null,
       state: req.body.state,
       duration: req.body.duration,
       date: req.body.date,
@@ -62,7 +63,8 @@ module.exports = {
   putTimetrackById: async (req, res) => {
     try {
       res.activity.title = req.body.title;
-      res.activity.description = req.body.description || null;
+      res.activity.description = req.body.description,
+      longDescription = req.body.longDescription || null,
       res.activity.state = req.body.state;
       res.activity.duration = req.body.duration;
       res.activity.date = req.body.date;

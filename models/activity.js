@@ -7,6 +7,10 @@ const activitySchema = new mongoose.Schema({
     },
     description: {
         type: String,
+        required: true,
+    },
+    longDescription: {
+        type: String,
         required: false,
     },
     state: {
