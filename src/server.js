@@ -7,6 +7,7 @@ class Server {
 
   constructor() {
     this._app.use(express.json());
+    // this._app.get('json spaces');
     initMiddleware(this._app);
     initRoutes(this._app);
   }
