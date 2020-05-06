@@ -3,9 +3,8 @@ const initRoutes = require('./routes');
 const initMiddleware = require('./api/middleware/globalMiddleware');
 
 class Server {
-  _app = express();
-
   constructor() {
+    this._app = express();
     this._app.use(express.json());
     // this._app.get('json spaces');
     initMiddleware(this._app);
