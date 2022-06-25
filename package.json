@@ -14,7 +14,7 @@
     "express": "^4.17.1",
     "memory-cache": "^0.2.0",
     "mongoose": "^5.9.7",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
